@@ -1,0 +1,133 @@
+@import "_variables";
+
+* {
+  box-sizing: border-box;
+}
+div {
+  cursor: pointer;
+}
+
+body {
+  background-color: $sg;
+  height: 100vh;
+  display: grid;
+  gap: 1px;
+  grid-template-rows: 1fr 6fr 1fr;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  & > *:not(script) {
+    display: grid;
+    gap: 1px;
+    background-color: $sg;
+  }
+}
+
+header {
+  grid-row: 1/2;
+  grid-template-columns: 1fr 1.35fr 1fr;
+  div {
+    background-color: white;
+  }
+}
+
+main {
+  grid-row: 2/3;
+  grid-template-columns: 1fr 1.35fr 1fr;
+  grid-template-rows: repeat(5, 1fr);
+  div {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $sg;
+    transition: color 0.3s linear, background-color 0.3s linear;
+    &:hover {
+      background-color: $sg;
+      color: white;
+    }
+    span {
+      font-size: 30px;
+    }
+  }
+}
+
+.main__photo {
+  grid-column: 2/3;
+  grid-row: 1/6;
+  &:hover {
+  }
+}
+.main__box1:hover ~ .main__photo {
+  background-image: url("https://images.pexels.com/photos/7945340/pexels-photo-7945340.jpeg?cs=srgb&dl=pexels-evie-shaffer-7945340.jpg&fm=jpg");
+  background-size: cover;
+}
+.main__box2:hover ~ .main__photo {
+  background-image: url("https://images.pexels.com/photos/7945340/pexels-photo-7945340.jpeg?cs=srgb&dl=pexels-evie-shaffer-7945340.jpg&fm=jpg");
+  background-size: cover;
+}
+.main__box3:hover ~ .main__photo {
+  background-image: url("https://images.pexels.com/photos/7945340/pexels-photo-7945340.jpeg?cs=srgb&dl=pexels-evie-shaffer-7945340.jpg&fm=jpg");
+  background-size: cover;
+}
+.main__box4:hover ~ .main__photo {
+  background-image: url("https://images.pexels.com/photos/7945340/pexels-photo-7945340.jpeg?cs=srgb&dl=pexels-evie-shaffer-7945340.jpg&fm=jpg");
+  background-size: cover;
+}
+.main__box5:hover ~ .main__photo {
+  background-image: url("https://images.pexels.com/photos/7945340/pexels-photo-7945340.jpeg?cs=srgb&dl=pexels-evie-shaffer-7945340.jpg&fm=jpg");
+  background-size: cover;
+}
+.main__box6:hover ~ .main__photo {
+  background-image: url("https://images.pexels.com/photos/7945340/pexels-photo-7945340.jpeg?cs=srgb&dl=pexels-evie-shaffer-7945340.jpg&fm=jpg");
+  background-size: cover;
+}
+.main__box7:hover ~ .main__photo {
+  background-image: url("https://images.pexels.com/photos/7945340/pexels-photo-7945340.jpeg?cs=srgb&dl=pexels-evie-shaffer-7945340.jpg&fm=jpg");
+  background-size: cover;
+}
+.main__box8:hover ~ .main__photo {
+  background-image: url("https://images.pexels.com/photos/7945340/pexels-photo-7945340.jpeg?cs=srgb&dl=pexels-evie-shaffer-7945340.jpg&fm=jpg");
+  background-size: cover;
+}
+.main__box9:hover ~ .main__photo {
+  background-image: url("https://images.pexels.com/photos/7945340/pexels-photo-7945340.jpeg?cs=srgb&dl=pexels-evie-shaffer-7945340.jpg&fm=jpg");
+  background-size: cover;
+}
+
+.main__box10:hover ~ .main__photo {
+  background-image: url("https://images.pexels.com/photos/7945340/pexels-photo-7945340.jpeg?cs=srgb&dl=pexels-evie-shaffer-7945340.jpg&fm=jpg");
+  background-size: cover;
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-500px);
+  }
+
+  100% {
+    transform: translateX(-1000px);
+  }
+}
+footer {
+  grid-row: 3/4;
+  grid-template-columns: 1fr 1.35fr 1fr;
+  div {
+    background-color: white;
+  }
+  .footer__center {
+    grid-column: 2/3;
+    white-space: nowrap;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span {
+      font-size: 30px;
+      color: $sg;
+      animation: scrollText 5s linear infinite forwards;
+    }
+  }
+}
