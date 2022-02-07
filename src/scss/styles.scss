@@ -1,133 +1,147 @@
 @import "_variables";
 
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
-div {
-  cursor: pointer;
+a {
+	all: unset;
 }
 
 body {
-  background-color: $sg;
-  height: 100vh;
-  display: grid;
-  gap: 1px;
-  grid-template-rows: 1fr 6fr 1fr;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  & > *:not(script) {
-    display: grid;
-    gap: 1px;
-    background-color: $sg;
-  }
+	width: 100%;
+	height: 100vh;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	padding-top: 50px;
+	background-color: white;
 }
 
 header {
-  grid-row: 1/2;
-  grid-template-columns: 1fr 1.35fr 1fr;
-  div {
-    background-color: white;
-  }
-}
+	height: 50px;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	background-color: white;
+	nav {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+		justify-content: space-between;
+		align-items: center;
 
+		.header-panel {
+			position: absolute;
+			grid-column: 1/2;
+			width: 100%;
+			top: 0;
+			left: 0;
+			min-height: 100vh;
+			background-color: gainsboro;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: flex-start;
+			overflow-y: scroll;
+			i {
+				position: absolute;
+				top: 15px;
+				right: 15px;
+				cursor: pointer;
+				font-size: 30px;
+				font-weight: 600;
+				transition: transform 0.5s ease-in-out;
+				&:hover {
+					transform: rotateZ(90deg);
+				}
+			}
+			div {
+				padding: 15px 200px 20px 15px;
+				width: 100%;
+				border-bottom: 1px solid black;
+				display: grid;
+				grid-template-columns: 2.5fr 10fr;
+
+				div {
+					padding: 0;
+					border: none;
+					display: flex;
+					justify-content: flex-start;
+					align-items: flex-start;
+					h1 {
+						font-size: 30px;
+					}
+					p {
+						font-size: 30px;
+					}
+				}
+				div:last-child {
+					width: 500px;
+				}
+			}
+		}
+		ul {
+			width: 100%;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			font-size: 30px;
+			cursor: pointer;
+		}
+		ul:first-child {
+			color: gainsboro;
+			li {
+				margin-right: 30px;
+
+				&:first-child {
+					margin-left: 20px;
+					margin-right: 120px;
+					color: black;
+				}
+			}
+			&:hover {
+				background-color: gainsboro;
+				color: white;
+			}
+		}
+		ul:nth-child(2) {
+			color: black;
+			li {
+				margin-left: 20px;
+				margin-right: 60px;
+				&:last-child {
+					margin-bottom: 10px;
+					align-self: flex-end;
+					margin-left: auto;
+					font-size: 15px;
+				}
+			}
+			&:hover {
+				background-color: gainsboro;
+			}
+		}
+	}
+}
 main {
-  grid-row: 2/3;
-  grid-template-columns: 1fr 1.35fr 1fr;
-  grid-template-rows: repeat(5, 1fr);
-  div {
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: $sg;
-    transition: color 0.3s linear, background-color 0.3s linear;
-    &:hover {
-      background-color: $sg;
-      color: white;
-    }
-    span {
-      font-size: 30px;
-    }
-  }
-}
-
-.main__photo {
-  grid-column: 2/3;
-  grid-row: 1/6;
-  &:hover {
-  }
-}
-.main__box1:hover ~ .main__photo {
-  background-image: url("https://images.pexels.com/photos/7945340/pexels-photo-7945340.jpeg?cs=srgb&dl=pexels-evie-shaffer-7945340.jpg&fm=jpg");
-  background-size: cover;
-}
-.main__box2:hover ~ .main__photo {
-  background-image: url("https://images.pexels.com/photos/7945340/pexels-photo-7945340.jpeg?cs=srgb&dl=pexels-evie-shaffer-7945340.jpg&fm=jpg");
-  background-size: cover;
-}
-.main__box3:hover ~ .main__photo {
-  background-image: url("https://images.pexels.com/photos/7945340/pexels-photo-7945340.jpeg?cs=srgb&dl=pexels-evie-shaffer-7945340.jpg&fm=jpg");
-  background-size: cover;
-}
-.main__box4:hover ~ .main__photo {
-  background-image: url("https://images.pexels.com/photos/7945340/pexels-photo-7945340.jpeg?cs=srgb&dl=pexels-evie-shaffer-7945340.jpg&fm=jpg");
-  background-size: cover;
-}
-.main__box5:hover ~ .main__photo {
-  background-image: url("https://images.pexels.com/photos/7945340/pexels-photo-7945340.jpeg?cs=srgb&dl=pexels-evie-shaffer-7945340.jpg&fm=jpg");
-  background-size: cover;
-}
-.main__box6:hover ~ .main__photo {
-  background-image: url("https://images.pexels.com/photos/7945340/pexels-photo-7945340.jpeg?cs=srgb&dl=pexels-evie-shaffer-7945340.jpg&fm=jpg");
-  background-size: cover;
-}
-.main__box7:hover ~ .main__photo {
-  background-image: url("https://images.pexels.com/photos/7945340/pexels-photo-7945340.jpeg?cs=srgb&dl=pexels-evie-shaffer-7945340.jpg&fm=jpg");
-  background-size: cover;
-}
-.main__box8:hover ~ .main__photo {
-  background-image: url("https://images.pexels.com/photos/7945340/pexels-photo-7945340.jpeg?cs=srgb&dl=pexels-evie-shaffer-7945340.jpg&fm=jpg");
-  background-size: cover;
-}
-.main__box9:hover ~ .main__photo {
-  background-image: url("https://images.pexels.com/photos/7945340/pexels-photo-7945340.jpeg?cs=srgb&dl=pexels-evie-shaffer-7945340.jpg&fm=jpg");
-  background-size: cover;
-}
-
-.main__box10:hover ~ .main__photo {
-  background-image: url("https://images.pexels.com/photos/7945340/pexels-photo-7945340.jpeg?cs=srgb&dl=pexels-evie-shaffer-7945340.jpg&fm=jpg");
-  background-size: cover;
-}
-
-@keyframes scrollText {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(-500px);
-  }
-
-  100% {
-    transform: translateX(-1000px);
-  }
-}
-footer {
-  grid-row: 3/4;
-  grid-template-columns: 1fr 1.35fr 1fr;
-  div {
-    background-color: white;
-  }
-  .footer__center {
-    grid-column: 2/3;
-    white-space: nowrap;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    span {
-      font-size: 30px;
-      color: $sg;
-      animation: scrollText 5s linear infinite forwards;
-    }
-  }
+	width: 100%;
+	height: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-auto-rows: 460px;
+	article {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+		div {
+			padding-left: 15px;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			font-size: 17px;
+		}
+	}
 }
